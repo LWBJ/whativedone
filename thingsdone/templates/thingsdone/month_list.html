@@ -8,7 +8,7 @@
   {% for month in month_list %}
   <div class="list-block">
     <a href="{{ month.get_absolute_url }}">{{month}}</a>
-    <p>Montly projects: {{ month.thingdone_set.all.count }}</p>   
+    <p>Monthly projects: {{ month.thingdone_set.all.count }}</p>   
   </div>
   {% endfor %}
 {% else %}
