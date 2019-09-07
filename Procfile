@@ -1,1 +1,1 @@
-web: gunicorn library2.wsgi --log-file -
+web: gunicorn whativedone.wsgi --log-file -
