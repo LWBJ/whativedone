@@ -8,7 +8,7 @@
   {% for week in week_list %}
   <div class="list-block">
     <a href="{{ week.get_absolute_url }}">{{ week }}</a>
-    <p>Things done: {{ week.thingdone_set.all.count }}</p>   
+    <p>Weekly projects: {{ week.thingdone_set.all.count }}</p>   
   </div>
   {% endfor %}
 {% else %}

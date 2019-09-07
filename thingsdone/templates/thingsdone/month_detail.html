@@ -3,7 +3,7 @@
 {% block content %}
 <div class="list-block">
 <h2>{{ month }}</h2>
-<h3>Things done</h3>
+<h3>Monthly projects</h3>
 
 {% if month.thingdone_set.all %}
 <p><a href="{% url 'months-edit' month.pk %}">Edit</a></p>
@@ -25,6 +25,7 @@
   {% for day in days.all %}
     <div class="list-block">
       <a href="{{ day.get_absolute_url }}">{{ day }}</a>
+      <p>Things done: {{ day.thingdone_set.all.count }}</p>  
     </div>
   {% endfor %}
 {% else %}
