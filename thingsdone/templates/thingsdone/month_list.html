@@ -1,0 +1,18 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<div class="list-block">
+<h2>Months</h2>
+<a href="{% url 'months-create' %}">New Month</a>
+{% if month_list %}
+  {% for month in month_list %}
+  <div class="list-block">
+    <a href="{{ month.get_absolute_url }}">{{month}}</a>
+    <p>Things done: {{ month.thingdone_set.all.count }}</p>   
+  </div>
+  {% endfor %}
+{% else %}
+  <p>No months!</p>
+{% endif %}
+</div>
+{% endblock %}

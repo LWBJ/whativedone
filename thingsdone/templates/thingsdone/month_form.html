@@ -1,0 +1,73 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<div class="list-block">
+  <h2>New Month</h2>
+  {% if err %}
+    <p><strong>{{err}}</strong></p>
+  {% endif %}
+  
+  {% if form.errors %}
+  {% for error in form.non_field_errors %}
+        <p>
+            <strong>{{ error }}</strong>
+        </p>
+  {% endfor %}
+  {% for field in form %}
+    {% for error in field.errors %}
+      <p><strong>{{ error|escape }}</strong></p>
+        {% endfor %}
+  {% endfor %}
+  {% endif %}
+
+  <form action="" method="POST">
+  {% csrf_token %}
+    <table>
+      <tr>
+        <td>{{ form.year.label_tag }}</td>
+        <td>{{ form.year }}</td>
+      </tr>
+      <tr>
+      <tr>
+        <td>{{ form.month.label_tag }}</td>
+        <td>{{ form.month }}</td>
+      </tr>
+      <tr>
+        <td><hr><td>
+      </tr>
+      <tr>
+        <td>Item 1: </td>
+        <td>{{ form.saikang1 }}</td>
+      </tr>
+      <tr>
+        <td>Difficulty: </td>
+        <td>{{ form.difficulty1 }}</td>
+      </tr>
+      <tr>
+        <td><hr><td>
+      </tr>
+      <tr>
+        <td>Item 2: </td>
+        <td>{{ form.saikang2 }}</td>
+      </tr>
+      <tr>
+        <td>Difficulty: </td>
+        <td>{{ form.difficulty2 }}</td>
+      </tr>
+      <tr>
+        <td><hr><td>
+      </tr>
+      <tr>
+        <td>Item 3: </td>
+        <td>{{ form.saikang3 }}</td>
+      </tr>
+      <tr>
+        <td>Difficulty: </td>
+        <td>{{ form.difficulty3 }}</td>
+      </tr>
+    </table>
+    <br>
+    <input type="submit" value="Create" />
+  </form>
+</div>
+{% endblock %}

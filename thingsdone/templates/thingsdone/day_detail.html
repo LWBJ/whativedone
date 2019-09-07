@@ -1,0 +1,44 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+
+<div class='list-block'>
+<h2>Day: {{day}}</h2>
+<h3>Things done</h3>
+{% if day.thingdone_set.all %}
+<p><a href="{% url 'days-edit' day.pk %}">Edit</a></p>
+{% endif %}
+
+{% if day.thingdone_set.all %}
+  {% for thingdone in day.thingdone_set.all %}
+    <div class="list-block">
+      <h4>{{thingdone}}</h4>
+      <p>Diffculty: {{thingdone.difficulty}}</p>
+    </div>
+  {% endfor %}
+{% else %}
+  <p>Nothing done this day!</p>
+{% endif %}
+</div>
+
+<div class="list-block">
+  <form action="" method="POST">
+  {% csrf_token %}
+    <table>
+      <tr>
+        <td>Item: </td>
+        <td>{{ form.name }}</td>
+      </tr>
+      <tr>
+        <td>Diffculty: </td>
+        <td>{{ form.difficulty }}</td>
+      </tr>
+    </table>
+    <br>
+    <input type="submit" value="Add new item" />
+  </form>
+</div>
+<div class="list-block">
+  <a href="{% url 'days-delete' day.pk %}">Delete</a>
+</div>
+{% endblock %}

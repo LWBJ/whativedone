@@ -1,0 +1,10 @@
+p {
+  background-color: red;
+  color: pink;
+  font-family: arial;
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  padding: 5%;
+  font-size: 2rem;
+}

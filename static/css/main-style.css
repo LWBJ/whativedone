@@ -1,0 +1,44 @@
+h1 {
+  background-color: red;
+  color: pink;
+  font-family: arial;
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 5%;
+  font-size: 2rem;
+}
+
+.list-block {
+  font-family: helvetica;
+  width: 85%;
+  padding: 20px;
+  margin: auto;
+  margin-top: 10px;
+  border: 2px solid blue;
+  border-radius: 10px
+}
+
+.navbar {
+  font-family: helvetica;
+  width: 85%;
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.navbar a {
+  padding: 10px; 
+}
+
+.navbar span {
+  float: right;
+  padding-right: 10px;
+  color: blue;
+}
+
+li {
+  list-style-type: none;	
+  padding: 1%;
+}

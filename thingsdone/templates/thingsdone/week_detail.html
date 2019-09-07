@@ -1,0 +1,52 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<div class="list-block">
+<h2>{{ week }}</h2>
+<h3>Things done</h3>
+
+{% if week.thingdone_set.all %}
+<p><a href="{% url 'weeks-edit' week.pk %}">Edit</a></p>
+{% endif %}
+
+{% if week.thingdone_set.all %}
+  {% for thingdone in week.thingdone_set.all %}
+    <div class="list-block">
+      <h4>{{ thingdone }}</h4>
+      <p>Difficulty: {{ thingdone.difficulty }}</p>
+    </div>
+  {% endfor %}
+{% else %}
+  <p>No big projects for the week</p>
+{% endif %}
+
+<h3>Days in week</h3>
+{% if days.all %}
+  {% for day in days.all %}
+    <div class="list-block">
+      <a href="{{ day.get_absolute_url }}">{{ day }}</a>
+    </div>
+  {% endfor %}
+{% else %}
+  <p>No days to take note off this week!</p>
+{% endif %}
+</div>
+
+<div class="list-block">
+  <form action="" method="POST">
+  {% csrf_token %}
+    <table>
+      <tr>
+        <td>Item: </td>
+        <td>{{ form.name }}</td>
+      </tr>
+      <tr>
+        <td>Diffculty: </td>
+        <td>{{ form.difficulty }}</td>
+      </tr>
+    </table>
+    <br>
+    <input type="submit" value="Add new item" />
+  </form>
+</div>
+{% endblock %}

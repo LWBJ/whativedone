@@ -1,0 +1,49 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<div class="list-block">
+  
+  <h2>{{ title }}</h2>
+  
+  {% if form.errors %}
+  {% for error in form.non_field_errors %}
+        <p>
+            <strong>{{ error }}</strong>
+        </p>
+  {% endfor %}
+  {% for field in form %}
+    {% for error in field.errors %}
+      <p><strong>{{ error|escape }}</strong></p>
+        {% endfor %}
+  {% endfor %}
+  {% endif %}
+
+  <form action="" method="POST">
+  {% csrf_token %}
+    <table>
+      {{ formset.management_form }}
+      {% for form in formset %}
+        {{ form.id }}
+        <tr>
+            <td>Item: </td>
+            <td>{{ form.name }}</td>
+        </tr>
+        <tr>
+            <td>Difficulty: </td>
+            <td>{{ form.difficulty }}</td>
+        </tr>
+        <tr>
+            <td>Delete: </td>
+            <td>{{ form.DELETE }}</td>
+        </tr>
+        <tr>
+          <td><hr></td>
+        <tr>
+      {% endfor %}
+    </table>
+    <input type="submit" value="Edit" />
+  </form>
+</div>
+{% endblock %}
+
+

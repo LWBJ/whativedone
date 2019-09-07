@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="list-block">
+<h2>Days</h2>
+<a href="{% url 'days-create' %}">New Day</a>
+{% if day_list %}
+  {% for day in day_list %}
+  <div class="list-block">
+    <a href="{{ day.get_absolute_url }}">Date: {{day}}</a>
+    <p>Things done: {{ day.thingdone_set.all.count }}</p>   
+  </div>
+  {% endfor %}
+{% else %}
+  <p>You havent done anything at all!</p>
+{% endif %}
+</div>
+
+{% endblock %}

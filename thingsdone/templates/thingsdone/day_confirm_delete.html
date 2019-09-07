@@ -1,0 +1,15 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<div class="list-block">
+  <h2>Delete Day</h2>
+
+  <p>Are you sure you want to delete the day: {{ day }}?</p>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Delete">
+  </form>
+
+</div>
+{% endblock %}
