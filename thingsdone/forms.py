@@ -17,7 +17,8 @@ class DayForm(forms.Form):
     ('Trivial', 'Trivial'),
     ('Normal', 'Normal'),
     ('Challenging', 'Challenging'),
-    ('Tough', 'Tough'),
+    ('Arduous', 'Arduous'),
+    ('Rabz Kebabz', 'Rabz Kebabz'),
   ]
   
   saikang1 = forms.CharField(required=False)
@@ -71,7 +72,8 @@ class MonthForm(forms.Form):
     ('Trivial', 'Trivial'),
     ('Normal', 'Normal'),
     ('Challenging', 'Challenging'),
-    ('Tough', 'Tough'),
+    ('Arduous', 'Arduous'),
+    ('Rabz Kebabz', 'Rabz Kebabz'),
   ]
   
   saikang1 = forms.CharField(required=False)
@@ -119,7 +121,8 @@ class WeekForm(forms.Form):
     ('Trivial', 'Trivial'),
     ('Normal', 'Normal'),
     ('Challenging', 'Challenging'),
-    ('Tough', 'Tough'),
+    ('Arduous', 'Arduous'),
+    ('Rabz Kebabz', 'Rabz Kebabz'),
   ]
   
   saikang1 = forms.CharField(required=False)

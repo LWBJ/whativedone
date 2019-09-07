@@ -9,6 +9,7 @@
   <form action="" method="POST">
     {% csrf_token %}
     <input type="submit" value="Delete">
+    <button><a class="button-link" style="text-decoration: none" href="{% url 'days-detail' day.pk %}">Go Back</a></button>
   </form>
 
 </div>

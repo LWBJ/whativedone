@@ -42,3 +42,7 @@ li {
   list-style-type: none;	
   padding: 1%;
 }
+
+.button-link {
+  color: black;
+}

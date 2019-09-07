@@ -54,7 +54,8 @@ class ThingDone(models.Model):
     ('Trivial', 'Trivial'),
     ('Normal', 'Normal'),
     ('Challenging', 'Challenging'),
-    ('Tough', 'Tough'),
+    ('Arduous', 'Arduous'),
+    ('Rabz Kebabz', 'Rabz Kebabz'),
   ]
   name = models.CharField(max_length=200, help_text="What did you do?", default="Saikang")
   difficulty = models.CharField(max_length=200, choices=DIFFICULTY, default='Normal', help_text="How challenging was the task?")
